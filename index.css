@@ -1,0 +1,97 @@
+body {
+    background-color: lightblue;
+    font-family: 'Merienda';
+
+}
+
+.timerBtn {
+    width: 80px;
+    height: 30px;
+    border: 3px solid;
+    border-radius: 50px;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+
+    font-family: 'Merienda';
+    font-size: 15px;
+    font-weight: bolder;
+
+    margin-right: 15px;
+
+    height: 40px;
+    width: 90px;
+}
+
+.timerBtn:hover {
+    transition: 0.4s;
+}
+
+.timerBtn:active {
+    transform: translateY(6px);
+}
+
+
+#startBtn {
+    color: green;
+}
+
+#pauseBtn {
+    color: yellow;
+}
+
+#resetBtn {
+    color: red
+}
+
+
+#timeDisplay {
+    font-size: 75px;
+    color: lightblue;
+    font-family: 'Merienda';
+}
+
+#timeContainer {
+    text-align: center;
+    border: 3px solid;
+
+    border-radius: 60px;
+    background-color: #222222;
+
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 45px;
+    padding-left: auto;
+    padding-right: auto;
+
+    height: 150px;
+    width: 820px;
+}
+
+#code {
+    text-align: center;
+}
+
+#link {
+    cursor: pointer;
+
+    font-family: 'Merienda';
+    font-size: medium;
+    font-weight: bolder;
+
+    margin-right: 20px;
+}
+
+#link:hover {
+    color: red;
+}
+
+#link:active {
+    color: black;
+}
+
+#link:visited {
+    color: #0000EE;
+}
