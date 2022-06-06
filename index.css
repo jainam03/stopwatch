@@ -76,7 +76,8 @@ h1 {
 }
 
 a {
-    display: block;
+    margin-left: 655px;
+
     text-align: center;
 
     font-size: 25px;
