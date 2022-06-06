@@ -4,6 +4,11 @@ body {
 
 }
 
+h1 {
+    text-align: center;
+    color: #333333;
+}
+
 .timerBtn {
     width: 80px;
     height: 30px;
@@ -70,27 +75,15 @@ body {
     width: 820px;
 }
 
-#code {
+a {
+    display: block;
     text-align: center;
-}
 
-#link {
-    cursor: pointer;
-
-    font-family: 'Merienda';
     font-size: 25px;
-
-    margin-right: 20px;
 }
 
-#link:hover {
-    color: red;
-}
-
-#link:active {
+a:active {
     color: black;
-}
-
-#link:visited {
-    color: #0000EE;
+    transition: 0.4s;
+    transform: translateY(6px)
 }
