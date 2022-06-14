@@ -4,6 +4,10 @@ body {
 
 }
 
+i {
+    word-spacing: 2px;
+}
+
 h1 {
     text-align: center;
     color: #333333;
@@ -14,7 +18,7 @@ h1 {
     height: 30px;
     border: 3px solid;
     border-radius: 50px;
-    background-color: #333333;
+    background-color: #454444;
     color: white;
     cursor: pointer;
 
@@ -30,6 +34,7 @@ h1 {
 
 .timerBtn:hover {
     transition: 0.4s;
+    box-shadow: 0 0 22px lightblue;
 }
 
 .timerBtn:active {
@@ -38,7 +43,7 @@ h1 {
 
 
 #startBtn {
-    color: green;
+    color: rgb(75, 200, 75);
 }
 
 #pauseBtn {
@@ -62,6 +67,7 @@ h1 {
 
     border-radius: 60px;
     background-color: #222222;
+    box-shadow: 0px 0px 15px blue;
 
     margin-top: 50px;
     margin-left: auto;
