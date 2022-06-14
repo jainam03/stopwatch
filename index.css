@@ -34,7 +34,7 @@ h1 {
 
 .timerBtn:hover {
     transition: 0.4s;
-    box-shadow: 0 0 22px lightblue;
+    box-shadow: 0 0 22px rgb(94, 192, 225);
 }
 
 .timerBtn:active {
@@ -67,7 +67,6 @@ h1 {
 
     border-radius: 60px;
     background-color: #222222;
-    box-shadow: 0px 0px 15px blue;
 
     margin-top: 50px;
     margin-left: auto;
@@ -89,8 +88,11 @@ a {
     font-size: 25px;
 }
 
+a:hover {
+    transition: 0.2s;
+    color: red;
+}
+
 a:active {
     color: black;
-    transition: 0.4s;
-    transform: translateY(6px)
 }
