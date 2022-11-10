@@ -1,0 +1,232 @@
+(The code sometimes may not be in sync with the actual one. In that case, I'll do that ASAP! :-) )
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="/watchimg.png">
+</head>
+
+<body>
+    <h1>
+        <i>
+            This is a standard stopwatch
+        </i>
+    </h1>
+    <div id="timeContainer">
+        <div id="timeDisplay">00:00:00</div>
+        <br>
+        <button id="startBtn" class="timerBtn">
+            <i>Start</i>
+        </button>
+        <button id="pauseBtn" class="timerBtn">
+            <i>Pause</i>
+        </button>
+        <button id="resetBtn" class="timerBtn" onclick="resetFunc()">
+            <i>Reset</i>
+        </button>
+    </div>
+
+    <br> <br>
+
+    <br>
+    <a href="src.txt" target="_blank" download>
+        <i> Get the code! </i>
+    </a>
+    <br> <br>
+
+    <marquee behavior="" direction="right">
+        <footer>( Turn off the dark mode of your browser if it is on. )</footer>
+
+    </marquee>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
+
+CSS
+
+body {
+    background-color: lightblue;
+    font-family: 'Merienda';
+
+}
+
+i {
+    word-spacing: 2px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+}
+
+.timerBtn {
+    width: 80px;
+    height: 30px;
+    border: 3px solid;
+    border-radius: 50px;
+    background-color: #454444;
+    color: white;
+    cursor: pointer;
+
+    font-family: 'Merienda';
+    font-size: 15px;
+    font-weight: bolder;
+
+    margin-right: 15px;
+
+    height: 40px;
+    width: 90px;
+}
+
+.timerBtn:hover {
+    transition: 0.4s;
+    box-shadow: 0 0 22px rgb(94, 192, 225);
+}
+
+.timerBtn:active {
+    transform: translateY(6px);
+}
+
+
+#startBtn {
+    color: rgb(75, 200, 75);
+}
+
+#pauseBtn {
+    color: yellow;
+}
+
+#resetBtn {
+    color: red
+}
+
+
+#timeDisplay {
+    font-size: 75px;
+    color: lightblue;
+    font-family: 'Merienda';
+}
+
+#timeContainer {
+    text-align: center;
+    border: 3px solid;
+
+    border-radius: 60px;
+    background-color: #222222;
+
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 45px;
+    padding-left: auto;
+    padding-right: auto;
+
+    height: 150px;
+    width: 820px;
+}
+
+a {
+    margin-left: 665px;
+
+    text-align: center;
+
+    font-size: 25px;
+}
+
+a:hover {
+    transition: 0.2s;
+    color: red;
+}
+
+a:active {
+    color: black;
+}
+
+footer {
+    text-align: center;
+
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+
+    word-spacing: 2px;
+}
+
+JAVASCRIPT
+
+const timeDisplay = document.querySelector("#timeDisplay");
+const startBtn = document.querySelector("#startBtn");
+const pauseBtn = document.querySelector("#pauseBtn");
+const resetBtn = document.querySelector("#resetBtn");
+
+let startTime = 0;
+let elapsedTime = 0;
+let currentTime = 0;
+let paused = true;
+let intervalId;
+let hrs = 0;
+let mins = 0;
+let secs = 0;
+
+startBtn.addEventListener("click", () => {
+    if (paused) {
+        paused = false;
+        startTime = Date.now() - elapsedTime;
+        intervalId = setInterval(updateTime, 1000);
+    }
+});
+pauseBtn.addEventListener("click", () => {
+    if (!paused) {
+        paused = true;
+        elapsedTime = Date.now() - startTime;
+        clearInterval(intervalId);
+    }
+});
+resetBtn.addEventListener("click", () => {
+    paused = true;
+    clearInterval(intervalId);
+    startTime = 0;
+    elapsedTime = 0;
+    currentTime = 0;
+    hrs = 0;
+    mins = 0;
+    secs = 0;
+    timeDisplay.textContent = "00:00:00";
+
+    /*alert("Stopwatch reset successful");*/
+});
+
+function resetFunc() {
+    alert("Stopwatch reset successful");
+}
+
+function updateTime() {
+    elapsedTime = Date.now() - startTime;
+
+    secs = Math.floor((elapsedTime / 1000) % 60);
+    mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
+    hrs = Math.floor((elapsedTime / (1000 * 60 * 60)) % 60);
+
+    secs = pad(secs);
+    mins = pad(mins);
+    hrs = pad(hrs);
+
+    timeDisplay.textContent = `${hrs}:${mins}:${secs}`;
+
+    function pad(unit) {
+        return (("0") + unit).length > 2 ? unit : "0" + unit;
+    }
+}
+
