@@ -1,0 +1,108 @@
+body {
+    background-color: lightblue;
+    font-family: 'Merienda';
+
+}
+
+i {
+    word-spacing: 2px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+}
+
+.timerBtn {
+    width: 80px;
+    height: 30px;
+    border: 3px solid;
+    border-radius: 50px;
+    background-color: #454444;
+    color: white;
+    cursor: pointer;
+
+    font-family: 'Merienda';
+    font-size: 15px;
+    font-weight: bolder;
+
+    margin-right: 15px;
+
+    height: 40px;
+    width: 90px;
+}
+
+.timerBtn:hover {
+    transition: 0.4s;
+    box-shadow: 0 0 22px rgb(94, 192, 225);
+}
+
+.timerBtn:active {
+    transform: translateY(6px);
+}
+
+
+#startBtn {
+    color: rgb(75, 200, 75);
+}
+
+#pauseBtn {
+    color: yellow;
+}
+
+#resetBtn {
+    color: red
+}
+
+
+#timeDisplay {
+    font-size: 75px;
+    color: lightblue;
+    font-family: 'Merienda';
+}
+
+#timeContainer {
+    text-align: center;
+    border: 3px solid;
+
+    border-radius: 60px;
+    background-color: #222222;
+
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 45px;
+    padding-left: auto;
+    padding-right: auto;
+
+    height: 150px;
+    width: 820px;
+}
+
+a {
+    margin-left: 665px;
+
+    text-align: center;
+
+    font-size: 25px;
+}
+
+a:hover {
+    transition: 0.2s;
+    color: red;
+}
+
+a:active {
+    color: black;
+}
+
+footer {
+    text-align: center;
+
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+
+    word-spacing: 2px;
+}
